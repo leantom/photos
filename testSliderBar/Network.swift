@@ -13,7 +13,7 @@ class Network: NSObject {
     
     func getPhotos(keyword: String,
                    completion:@escaping ([Hits]) ->()) {
-        guard let url = URL(string: "https://pixabay.com/api/?key=\(key_api)&q=\(keyword)&image_type=photo&pretty=true&per_page=30") else {return}
+        guard let url = URL(string: "https://pixabay.com/api/?key=\(key_api)&q=\(keyword)&image_type=photo&pretty=true&per_page=50") else {return}
      
         let task = URLSession.shared.dataTask(with: url) { data, response, err in
             guard let data = data, err == nil else {
